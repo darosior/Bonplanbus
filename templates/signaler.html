@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Page de signalement de bus pleins. BonPlanBus est un site web facilitant l'utilisation du réseau de bus TCL. Il permet le signalement de bus pleins et les liste."/>
+<title>Signalez les bus TCL pleins.</title>
+<link href="{{ url_for('static', filename='signaler.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<header class="centre"><a href="{{url_for('index')}}" title="Accueil"><img src="../static/banniere.png" alt="Logo BonPlanBus" title="Lien vers la première page"/></a> <hr/>  <h1> <span id="bon">Bon</span><span id="plan">Plan</span><span id="bus">Bus</span> </h1></header>
+
+
+<div id="pave" class="centre">
+
+<nav>
+
+ <a href="{{url_for('signaler')}}" class="lien_nav">Signaler un bus bondé </a><br/> 
+ <a href="{{url_for('liste_bus')}}" class="lien_nav"> liste des bus bondés </a><br/>
+ <a href="{{url_for('a_propos')}}" class="lien_nav"> A propos </a><br/>  
+ <a href="{{url_for('mentions')}}" class="lien_nav"> Mentions légales </a><br/>
+   
+</nav>
+
+<section>
+
+<h1> Signaler un bus </h1>
+
+{% if msg %}
+{% if e %}
+<div id="emessage"><i class="fa fa-times-circle"><!--Pour le logo error une classe de la SC font-awesome --></i><i>{{ msg }}</i></div>
+{% elif not e %}
+<div id="message"><i class="fa fa-check"><!--Pour le logo error une classe de la SC font-awesome --></i><i>{{ msg }}</i></div>
+{% endif %}
+{% endif %}
+
+<!-- Formulaire qui affiche a l'aide des fichiers/url json les informations relatives au signalement d'un bus, puis qui envoie les informations recuperees a la bdd --> 
+<form action="{{ url_for('signaler') }}" method="POST">
+
+<div id="div_lignes">
+<select name="numero_ligne" id="select_lignes" onchange="afficher_arrets();afficher_nomligne()">
+<option>Selectionner la ligne</option>
+</select>
+<br/>
+<div id="sens" onchange="afficher_nomligne()">
+<span>Le sens de la ligne :</span><br/>
+<div id="aller"><label for="sens">Aller</label> <input type="radio" name="sens" value="Aller" checked="checked"></br></div>
+<div id="retour"><label for="sens">Retour</label> <input type="radio" name="sens" value="Retour"></div><br/>
+<span id="nom_ligne" name="nom_ligne"></span>
+</div>
+</div>
+<br/>
+</br>
+
+<div id="div_arrets">
+<select name="arret" id="select_arrets" onchange="afficher_submit();">
+   <option>Selectionner l'arret</option>
+</select>
+</div>
+<br/>
+</br>
+
+<div id="div_submit">
+<label for="comm"> Commentaire supplémentaire (optionnel, max 100 caracteres) : </label><br/>
+<input type="text" name="comm" id="comm" maxlength="100" /><br/>
+</br>
+</br>
+
+<input type="submit" value="Signaler!">
+</div>
+</form>
+
+<p>Si vous rencontrez des difficultés lors de l'utilisation du formulaire, vous pouvez vous référer <a href="{{url_for('a_propos')}}" title="page a_propos">à l'aide sur la page "A propos"</a><br/></p>
+</section>
+
+</div>
+
+<footer class="centre">
+<div id="presentation_auteurs">
+
+<h3> Présentation des auteurs </h3>
+
+<ul> 
+<li>Antoine, fondateur et créateur de BonPlanBus.</li>
+<li>Nathanaël, cofondateur de BonPlanBus et créateur du logo "BpB".</li>
+<li>Youssou, cofondateur stagiaire</li> 
+</ul>
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/validator?uri=85.169.218.75&profile=css3&usermedium=all&warning=1&vextwarning=">
+        <img class="W3C"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2F85.169.218.75%2F">
+        <img class="W3C"
+            src="https://www.w3.org/Icons/valid-html401"
+            alt="Valid HTML!" />
+    </a>
+</p>
+</div>
+
+<div id="presentation_projet">
+
+<h3> Pourquoi ce projet </h3>
+<p> Même s'il a aujourd'hui dépassé le simple cadre scolaire, ce site est à la base une création s'inscrivant dans la démarche du projet de terminale en spécialité Informatique et Sciences du Numérique. (lien: <a href="http://fsincere.free.fr/isn/presentation/isn_presentation.php" title="présentation specialite ISN" > présentation du contenu de cette spécialité </a>)
+
+</div>
+
+<div id="autres">
+
+<h3> Autres </h3>
+
+<ul>
+<li><a href="{{url_for('mentions')}}" title="Mentions legales"> Mentions légales </a></li>
+<li><a href="{{url_for('mentions')}}" title="CGU"> Conditions Générales Utilisation </a></li>
+<li> Nous contacter : contact.bonplanbus@gmail.com</li>
+<li> Suivez-nous !</li>
+</ul>
+<a href="https://www.facebook.com/Bonplanbus-TCL-752755141527653/"><img alt="logo facebook" src="{{url_for('static', filename='logo_facebook.png')}}"/></a>   <a href="https://twitter.com/BonPlanBus" title="lien vers le profil twitter"><img alt="logo twitter" src="{{url_for('static', filename='logo_twitter.png')}}"/></a>
+
+
+</div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
+
+<script type=text/javascript>
+
+function update(){
+	$("#div_arrets").css("display", "none");
+	$("#div_submit").css("display", "none");		
+	$("#select_lignes").empty();
+	$("#select_lignes").append("<option> Selectionner la ligne </option>");
+	$.ajax({
+		url: '/afficher_lignes',
+		data: $('form').serialize(),
+		type: 'POST',
+		success: function(response) {
+			response = JSON.parse(response);
+			console.log(response);
+			for (var i=0; i<response.length; i++){
+	                	$('#select_lignes').append('<option>'+response[i]+'</option>');
+			}
+            	},
+            	error: function(error) {
+                	console.log(error);
+		}
+	});
+}
+function afficher_arrets(){
+	/* arret choisi dans le menu deroulant */
+	$('#select_arrets').empty();
+	$('#select_arrets').append('<option> A proximité de l\'arret </option>');
+	var selected_arret = $('#select_lignes').find(':selected').text();
+	$("#div_arrets").css("display", "block");
+	$.ajax({
+		url: '/afficher_arrets',
+		data: $('form').serialize(),
+		type: 'POST',
+		success: function(response) {
+			response = JSON.parse(response);
+			console.log(response);
+			for (var i=0; i<response.length; i++){
+	                	$('#select_arrets').append('<option>'+response[i]+'</option>');
+			}
+            	},
+            	error: function(error) {
+                	console.log(error);
+		}
+	});
+}
+
+function afficher_submit(){
+	$("#div_submit").css("display", "block");
+}
+function afficher_nomligne(){
+	$('#nom_ligne').empty();
+	$.ajax({
+		url: '/nom_ligne',
+		data: $('form').serialize(),
+		type: 'POST',
+		success: function(response) {
+                	$('#nom_ligne').append('Ligne choisie : '+response);
+            	},
+            	error: function(error) {
+                	console.log(error);
+		}
+	});
+}
+update();
+</script>
+
+</body>
+</html>

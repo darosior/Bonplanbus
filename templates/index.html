@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="BonPlanBus est un site web facilitant l'utilisation du réseau de bus TCL. Il permet le signalement de bus pleins et les liste."/>
+<title>BonPlanBus, pour une meilleure utilisation des bus TCL.</title>
+<link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<header class="centre"><a href="{{url_for('index')}}" title="Accueil"><img src="../static/banniere.png" alt="Logo BonPlanBus" title="Lien vers la première page"/></a> <hr/>  <h1> <span id="bon">Bon</span><span id="plan">Plan</span><span id="bus">Bus</span> </h1></header>
+
+<div id="pave" class="centre">
+
+<nav>
+
+ <a href="{{url_for('signaler')}}" class="lien_nav">Signaler un bus bondé </a><br/> 
+ <a href="{{url_for('liste_bus')}}" class="lien_nav"> liste des bus bondés </a><br/>
+ <a href="{{url_for('a_propos')}}" class="lien_nav"> A propos </a><br/>  
+ <a href="{{url_for('mentions')}}" class="lien_nav"> Mentions légales </a><br/>
+   
+</nav>
+
+
+<section>
+
+<blockquote id="accroche">
+<em>" Planifiez au mieux votre voyage sur le réseau TCL ! " </em>
+<br/>
+</blockquote>
+
+<div id="presentation">
+
+<p> Bienvenue sur BonPlanBus, ce site vous aide à préparer votre voyage avec les bus tcl, dans la mesure où il dispose d'une plateforme collaborative de signalement des bus bondés.<br/>
+Pour commencer à l'utiliser, rendez vous dans le menu de gauche sur la liste des bus si vous souhaitez voir les bus bondés, ou sur la page de signalement si vous voyez ou vous trouvez dans un bus plein.<br/>
+Si vous rencontrez des problèmes lors de son utilisation, veuillez vous référer à la page à-propos où un manuel est détaillé.<br/>
+Si vous avez une quelconque question vous pouvez nous contacter à l'adresse suivante:</p><br/>
+
+</div>
+
+</section>
+
+</div>
+
+<footer class="centre">
+<div id="presentation_auteurs">
+
+<h3> Présentation des auteurs </h3>
+
+<ul> 
+<li>Antoine, fondateur et créateur de BonPlanBus.</li>
+<li>Nathanaël, cofondateur de BonPlanBus et créateur du logo "BpB".</li>
+<li>Youssou, cofondateur stagiaire</li> 
+</ul>
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/validator?uri=85.169.218.75&profile=css3&usermedium=all&warning=1&vextwarning=">
+        <img class="W3C"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2F85.169.218.75%2F">
+        <img class="W3C"
+            src="https://www.w3.org/Icons/valid-html401"
+            alt="Valid HTML!" />
+    </a>
+</p>
+</div>
+
+<div id="presentation_projet">
+
+<h3> Pourquoi ce projet </h3>
+<p> Même s'il a aujourd'hui dépassé le simple cadre scolaire, ce site est à la base une création s'inscrivant dans la démarche du projet de terminale en spécialité Informatique et Sciences du Numérique. (lien: <a href="http://fsincere.free.fr/isn/presentation/isn_presentation.php" title="présentation specialite ISN" > présentation du contenu de cette spécialité </a>)
+
+</div>
+
+<div id="autres">
+
+<h3> Autres </h3>
+
+<ul>
+<li><a href="{{url_for('mentions')}}" title="Mentions legales"> Mentions légales </a></li>
+<li><a href="{{url_for('mentions')}}" title="CGU"> Conditions Générales Utilisation </a></li>
+<li> Nous contacter : contact.bonplanbus@gmail.com</li>
+<li> Suivez-nous !</li>
+</ul>
+<a href="https://www.facebook.com/Bonplanbus-TCL-752755141527653/"><img alt="logo facebook" src="{{url_for('static', filename='logo_facebook.png')}}"/></a>   <a href="https://twitter.com/BonPlanBus" title="lien vers le profil twitter"><img alt="logo twitter" src="{{url_for('static', filename='logo_twitter.png')}}"/></a>
+
+
+</div>
+
+</footer>
+
+</body>
+
+</html>

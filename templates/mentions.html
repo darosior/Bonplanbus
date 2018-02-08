@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Mentions légales du site. BonPlanBus est un site web facilitant l'utilisation du réseau de bus TCL. Il permet le signalement de bus pleins et les liste."/>
+<title>BonPlanBus, pour une meilleure utilisation des bus TCL.</title>
+<link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<header class="centre"><a href="{{url_for('index')}}" title="Accueil"><img src="../static/banniere.png" alt="Logo BonPlanBus" title="Lien vers la première page"/></a> <hr/>  <h1> <span id="bon">Bon</span><span id="plan">Plan</span><span id="bus">Bus</span> </h1></header>
+
+<div id="pave" class="centre">
+
+<nav>
+
+ <a href="{{url_for('signaler')}}" class="lien_nav">Signaler un bus bondé </a><br/> 
+ <a href="{{url_for('liste_bus')}}" class="lien_nav"> liste des bus bondés </a><br/>
+ <a href="{{url_for('a_propos')}}" class="lien_nav"> A propos </a><br/>  
+ <a href="{{url_for('mentions')}}" class="lien_nav"> Mentions légales </a><br/>
+   
+</nav>
+
+
+<section>
+
+<h3> Mentions légales </h3>
+
+<ol>
+<li>
+<h4> Présentation du site </h4>
+<p> 
+Propriétaire : Antoine Poinsot <br/>
+Créateur : Antoine Poinsot <br/>
+Responsable publications : Antoine Poinsot (contacter à l'adresse suivante : contact.bonplanbus@gmail.com) <br/>
+Le responsable publication est une personne phyisique. <br/>
+Webmaster : Antoine Poinsot <br/>
+Hebergeur : Antoine Poinsot <br/>
+</p>
+</li>
+
+<li>
+<h4> Conditions Générales d'Utilisation </h4>
+<p>
+L'utilisation du présent site implique l'acceptation pleine et entière des conditions d'utilisation décrites ci-après. Ces conditions sont susceptibles d'être modifiées et les utilisateurs sont invités à les consulter de manière régulière.<br/>
+<br/>
+<strong id="important">BonPlanBus n'est pas une plateforme de signalement de controleurs </strong> du réseau TCL. BonPlanBus n'est en aucun cas un moyen d'éviter un quelconque contrôle sur le réseau TCL. Le Propriétaire et l'hébergeur déclinent toute responsabilité en cas de mauvaise utilisation du site web (BonPlanBus).<br/>
+<br/>
+Il est interdit d'émettre un faux signalement. Il est interdit d'émettre un signalement autre que celui d'un bus plein. Toute personne suspectée d'une mauvaise utilisation du présent site, ou d'un manquement aux conditions générales d'utilisation se verra <strong> bannir l'accès à BonPlanBus définitivement </strong>et sans signalement aucun.<br/>
+</p>
+</li>
+
+<li>
+<h4> Description des services fournis </h4>
+<p>
+Ce site permet le signalement de bus bondés. La personne responsable du site s'efforce de maintenir le site à jour le mieux possible. Cependant, il ne peut être tenu responsable des omissions, des inexactitudes et des carences présentes sur le site web, et de leurs conséquences.
+</p>
+</li>
+
+<li>
+<h4> Utilisation des données </h4>
+<p>
+BonPlanBus utilise les données libres fournies pas le <a href="http://www.sytral.fr/"><strong>Sytral</strong></a> concernant les lignes de bus et les arrêts de bus du réseau TCL. Le présent site respecte la charte d'utilisation de ces données et les utilise à but non lucratif et non professionel. Lien concernant l'utilisation de ces données : <a href="https://download.data.grandlyon.com/files/grandlyon/LicenceOuverte.pdf" title="licence utilisation des données">https://download.data.grandlyon.com/files/grandlyon/LicenceOuverte.pdf</a>.
+</p>
+</li>
+
+<li>
+<h4> Propriété intellectuelle et contrefaçons </h4>
+<p>
+Antoine Poinsot est propriétaire des droits de propriété intelectuelle de tous les éléments présents sur le site, notamment les textes, images, logo (tels que le logo BpL présent sur la bannière du site), logiciels.<br/>
+Toute reproduction, représentation, modification, publication, adaptation de tout ou partie du site web BonPlanBus est interdite.<br/>
+Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
+</p>
+</li>
+
+<li>
+<h4> Limites de responsabilités </h4>
+<p>
+Antoine Poinsot ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site BonPlanBus, et résultant de l’apparition d’un bug ou d’une incompatibilité.
+
+Antoine Poinsot ne pourra également être tenu responsable des dommages indirects (tels par exemple qu’une perte de marché ou perte d’une chance) consécutifs à l’utilisation du site.
+</p>
+</li>
+</ol>
+
+</section>
+
+</div>
+
+<footer class="centre">
+
+<div id="presentation_auteurs">
+
+<h3> Présentation des auteurs </h3>
+
+<ul> 
+<li>Antoine, fondateur et créateur de BonPlanBus.</li>
+<li>Nathanaël, cofondateur de BonPlanBus et créateur du logo "BpB".</li>
+<li>Youssou, cofondateur stagiaire</li> 
+</ul>
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/validator?uri=85.169.218.75&profile=css3&usermedium=all&warning=1&vextwarning=">
+        <img class="W3C"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2F85.169.218.75%2F">
+        <img class="W3C"
+            src="https://www.w3.org/Icons/valid-html401"
+            alt="Valid HTML!" />
+    </a>
+</p>
+</div>
+
+<div id="presentation_projet">
+
+<h3> Pourquoi ce projet </h3>
+<p> Même s'il a aujourd'hui dépassé le simple cadre scolaire, ce site est à la base une création s'inscrivant dans la démarche du projet de terminale en spécialité Informatique et Sciences du Numérique. (lien: <a href="http://fsincere.free.fr/isn/presentation/isn_presentation.php" title="présentation specialite ISN" > présentation du contenu de cette spécialité </a>)
+
+</div>
+
+<div id="autres">
+
+<h3> Autres </h3>
+
+<ul>
+<li><a href="{{url_for('mentions')}}" title="Mentions legales"> Mentions légales </a></li>
+<li><a href="{{url_for('mentions')}}" title="CGU"> Conditions Générales Utilisation </a></li>
+<li> Nous contacter : contact.bonplanbus@gmail.com</li>
+<li> Suivez-nous !</li>
+</ul>
+<a href="https://www.facebook.com/Bonplanbus-TCL-752755141527653/"><img alt="logo facebook" src="{{url_for('static', filename='logo_facebook.png')}}"/></a>   <a href="https://twitter.com/BonPlanBus" title="lien vers le profil twitter"><img alt="logo twitter" src="{{url_for('static', filename='logo_twitter.png')}}"/></a>
+
+
+</div>
+
+</footer>
+</body>
+</html>

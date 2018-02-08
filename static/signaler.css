@@ -1,0 +1,190 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+/* La feuille de style Font-awesome pour le logo error */
+
+body, html{
+height:100%;
+width:100%;
+padding:0;
+margin:0;
+background-color:white;
+font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.centre{ /* Gros bloc du milieu qui contient tout le contenu, centré, d'ou son nom */
+margin-left: auto;
+margin-right: auto;
+margin-top:0;
+width:75%;
+min-width:750px;
+max-width:1000px; /* Pour eviter que le design parte en cacahuete en fonction des definitions */
+border-right: 2px solid #D2D2D2;
+border-left: 2px solid #D2D2D2;
+text-align:center;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+#pave{ /* div regroupant le contenu du bloc principal */
+background-color:#F3F3F3;
+font-size:19px;
+position:relative;
+z-index:0
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+/* DEBUT HEADER */
+header hr
+{
+width: 1px;
+height:150px;
+}
+header{
+background-color:#232323;
+height:150px;
+position:relative;
+box-shadow: 0px 5px 6px 1px grey;
+z-index:1;
+}
+header img{
+float:left;
+height: 110px;
+margin:20px;
+}
+hr
+{
+margin:0;
+float:left;
+}
+header h1{
+font-size: 60px;
+font-style: oblique;
+font-weight: bold;
+font-family:'Wsper Libre', serif;
+color:white;
+}
+#bon{color:red;}  
+#plan{color:#FE4A4A;}  
+#bus{color:white;}
+/* FIN HEADER */
+
+
+nav{
+width: 30%;
+text-align:center;
+margin-top:3%;
+margin-right:2%;
+}
+.lien_nav:link, .lien_nav:visited { 
+background-color: #FE2F2F;
+color: white;
+padding: 14px 25px;
+margin: 10px;
+text-align: center;	
+text-decoration: none;
+display: inline-block;
+border-radius: 6px;
+border: 1px solid #FE9D9D;
+width:75%;
+}
+.lien_nav:hover{
+background-color: red;
+box-shadow: 0px 0px 5px 1px grey;
+}
+.lien_nav:active {
+background-color: red;
+}
+
+section{
+width: 65%;
+text-align:center;
+margin-left:1%;
+}
+section h2{
+text-decoration:underline;
+text-align:center;
+}
+section,nav{
+display:inline-block;
+vertical-align: top;
+word-wrap:break-word;
+position:static;
+}
+section h1{
+text-decoration:underline;
+font-size: 40px;
+}
+section p{
+font-style: italic;
+font-size: 18px;
+}
+section a:link, a:visited, a:active{
+text-decoration:none;
+color:black;
+}
+
+/* DEBUT FOOTER */
+.W3C{
+border:0;
+width:88px;
+height:31px;
+}
+#autres{
+padding-left: 2%;
+}
+#presentation_auteurs, #presentation_projet, #autres{
+color: white;
+width:31%;
+text-align:left;
+display:inline-block;
+vertical-align: top;
+margin-left:3px;
+}
+footer
+{
+background-color:#191919;
+font-size: 14px;
+margin-bottom:0;
+}
+footer ul{padding-left:0;}/*Supprimer le decalage de la liste*/
+footer a{color:white;text-decoration:none;}
+footer a:link{color:white;text-decoration:none;}
+footer a:visited{color:white;text-decoration:none;}
+footer a:hover{color:white;text-decoration:underline;}
+/* FIN FOOTER */
+
+
+/* Formulaire */
+select, input{
+display:inline-block;
+width:420px;
+height:50px;
+}
+#emessage{
+color: #E8000C;
+background-color: #FFBABA;
+margin: 15px 20px;
+padding:7px;
+border-radius: 3px;
+}
+#emessage i{
+margin:10px 22px;
+font-size:20px;
+font-style: inherit;
+vertical-align:middle;
+}
+
+#message{
+color: #4F8A10;
+background-color: #DFF2BF;
+margin: 15px 20px;
+padding:7px;
+border-radius: 3px;
+}
+#message i{
+margin:10px 22px;
+font-size:20px;
+font-style: inherit;
+vertical-align:middle;
+}
